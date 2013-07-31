@@ -7,7 +7,6 @@ class CoffeeGrailsGrailsPlugin {
     def pluginExcludes = [
         "grails-app/views/error.gsp"
     ]
-    def dependsOn = ["asset-pipeline": "* > 0.1.3"]
 
     // TODO Fill in these fields
     def title = "CoffeeScript Grails Plugin" // Headline display name of the plugin

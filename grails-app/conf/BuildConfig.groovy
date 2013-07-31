@@ -21,17 +21,10 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
-    dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        runtime 'org.mozilla:rhino:1.7R4'
-        // runtime 'mysql:mysql-connector-java:5.1.21'
-    }
 
     plugins {
 
-        runtime ":asset-pipeline:0.1.2" {
-            export = false
-        }
+        runtime ":asset-pipeline:0.1.3"
 
         build(":tomcat:$grailsVersion",
               ":release:2.2.0",
