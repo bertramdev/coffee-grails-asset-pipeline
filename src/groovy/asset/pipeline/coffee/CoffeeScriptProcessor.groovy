@@ -1,28 +1,21 @@
 package asset.pipeline.coffee
 
-
-import org.mozilla.javascript.Context;
-import org.mozilla.javascript.Function;
-import org.mozilla.javascript.JavaScriptException;
-import org.mozilla.javascript.NativeArray;
-import org.mozilla.javascript.Scriptable;
-import org.mozilla.javascript.ScriptableObject;
-import org.mozilla.javascript.tools.shell.Global;
+import org.mozilla.javascript.Context
+import org.mozilla.javascript.Scriptable
 import org.springframework.core.io.ClassPathResource
-
 
 // CoffeeScript engine uses Mozilla Rhino to compile the CoffeeScript template
 // using existing javascript in-browser compiler
 class CoffeeScriptProcessor {
 
-  def Scriptable globalScope
-  def ClassLoader classLoader
+  Scriptable globalScope
+  ClassLoader classLoader
 
-  def CoffeeScriptProcessor(){
+  CoffeeScriptProcessor(){
     try {
       classLoader = getClass().getClassLoader()
 
-      def coffeeScriptJsResource = (new ClassPathResource('asset/pipeline/coffee/coffee-script-1.6.1.js', getClass().classLoader))
+      def coffeeScriptJsResource = new ClassPathResource('asset/pipeline/coffee/coffee-script-1.6.1.js', classLoader)
       assert coffeeScriptJsResource.exists() : "CoffeeScriptJs resource not found"
 
       def coffeeScriptJsStream = coffeeScriptJsResource.inputStream
@@ -36,7 +29,7 @@ class CoffeeScriptProcessor {
     } finally {
       try {
         Context.exit()
-      } catch (java.lang.IllegalStateException e) {}
+      } catch (IllegalStateException e) {}
     }
   }
 
@@ -57,5 +50,4 @@ class CoffeeScriptProcessor {
       Context.exit()
     }
   }
-
 }
