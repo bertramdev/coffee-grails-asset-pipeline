@@ -1,10 +1,9 @@
 package asset.pipeline.coffee
-import asset.pipeline.*
 
 class CoffeeAssetFile {
 	static final String contentType = 'application/javascript'
 	static extensions = ['coffee', 'js.coffee']
-	static compiledExtension = 'js'
+	static final String compiledExtension = 'js'
 	static processors = [CoffeeScriptProcessor]
 
 	File file
