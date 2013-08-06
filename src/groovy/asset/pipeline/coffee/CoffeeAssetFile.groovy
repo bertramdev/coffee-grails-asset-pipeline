@@ -7,16 +7,18 @@ class CoffeeAssetFile {
 	static processors = [CoffeeScriptProcessor]
 
 	File file
+	def baseFile
 
-	CoffeeAssetFile(file) {
+	CoffeeAssetFile(file, baseFile=null) {
 		this.file = file
+		this.baseFile = baseFile
 	}
 
 	def processedStream() {
 		def fileText = file?.text
 		for(processor in processors) {
 			def processInstance = processor.newInstance()
-			fileText = processInstance.process(fileText)
+			fileText = processInstance.process(fileText, this)
 			// TODO Iterate Over Processors
 		}
 		return fileText

@@ -33,7 +33,7 @@ class CoffeeScriptProcessor {
     }
   }
 
-  def process(String input) {
+  def process(input, assetFile) {
     try {
       def cx = Context.enter()
       def compileScope = cx.newObject(globalScope)
