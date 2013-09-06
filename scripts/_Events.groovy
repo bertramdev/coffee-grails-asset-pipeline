@@ -1,5 +1,6 @@
 // includeTargets << new File(assetPipelinePluginDir, "scripts/_AssetCompile.groovy")
 
-eventAssetPrecompileStart = {
-	asset.pipeline.AssetHelper.assetSpecs << asset.pipeline.coffee.CoffeeAssetFile
+eventAssetPrecompileStart = { assetSpecs ->
+	def coffeeAssetFile = classLoader.loadClass('asset.pipeline.coffee.CoffeeAssetFile')
+	assetSpecs.specs << coffeeAssetFile
 }
