@@ -10,9 +10,11 @@ class CoffeeScriptProcessor {
 
   Scriptable globalScope
   ClassLoader classLoader
+  def precompilerMode
 
-  CoffeeScriptProcessor(){
+  CoffeeScriptProcessor(precompiler=false){
     try {
+      this.precompilerMode = precompiler
       classLoader = getClass().getClassLoader()
 
       def coffeeScriptJsResource = new ClassPathResource('asset/pipeline/coffee/coffee-script-1.6.1.js', classLoader)

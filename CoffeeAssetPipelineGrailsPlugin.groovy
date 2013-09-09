@@ -2,7 +2,7 @@ import asset.pipeline.AssetHelper
 import asset.pipeline.coffee.CoffeeAssetFile
 
 class CoffeeAssetPipelineGrailsPlugin {
-    def version = "0.7.0"
+    def version = "0.8.0"
     def grailsVersion = "2.0 > *"
     def title = "CoffeeScript Asset-Pipeline Plugin"
     def author = "David Estes"
