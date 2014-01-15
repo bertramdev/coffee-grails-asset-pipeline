@@ -3,7 +3,7 @@ import asset.pipeline.CacheManager
 import asset.pipeline.AssetHelper
 
 class CoffeeAssetFile {
-	static final String contentType = 'application/javascript'
+	static final contentType = ['application/javascript','application/x-javascript','text/javascript']
 	static extensions = ['coffee', 'js.coffee']
 	static final String compiledExtension = 'js'
 	static processors = [CoffeeScriptProcessor]
