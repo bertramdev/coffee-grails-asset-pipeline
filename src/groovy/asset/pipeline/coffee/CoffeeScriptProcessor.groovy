@@ -14,7 +14,7 @@ class CoffeeScriptProcessor {
 
   CoffeeScriptProcessor(precompiler=false){
     try {
-      this.precompilerMode = precompiler
+      this.precompilerMode = precompiler ? true : false
       classLoader = getClass().getClassLoader()
 
       def coffeeScriptJsResource = new ClassPathResource('asset/pipeline/coffee/coffee-script-1.6.1.js', classLoader)
