@@ -3,18 +3,19 @@ package asset.pipeline.coffee
 import org.mozilla.javascript.Context
 import org.mozilla.javascript.Scriptable
 import org.springframework.core.io.ClassPathResource
-
+import asset.pipeline.AbstractProcessor
+import asset.pipeline.AssetCompiler
 // CoffeeScript engine uses Mozilla Rhino to compile the CoffeeScript template
 // using existing javascript in-browser compiler
-class CoffeeScriptProcessor {
+class CoffeeScriptProcessor extends AbstractProcessor {
 
   Scriptable globalScope
   ClassLoader classLoader
-  def precompilerMode
 
-  CoffeeScriptProcessor(precompiler=false){
+
+  CoffeeScriptProcessor(AssetCompiler precompiler){
+      super(precompiler)
     try {
-      this.precompilerMode = precompiler ? true : false
       classLoader = getClass().getClassLoader()
 
       def coffeeScriptJsResource = new ClassPathResource('asset/pipeline/coffee/coffee-script-1.6.1.js', classLoader)
