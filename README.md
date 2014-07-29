@@ -15,3 +15,5 @@ Simply create files in your standard `assets/javascripts` folder with extension 
 #= require_self
 #= require_tree .
 ```
+
+*NOTE:* If the command line node coffee command is detected on your system. The application will attempt to use node to compile your javascript instead.
