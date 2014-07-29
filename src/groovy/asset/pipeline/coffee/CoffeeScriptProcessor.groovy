@@ -70,7 +70,7 @@ class CoffeeScriptProcessor extends AbstractProcessor {
     def err = new StringBuilder()
 
     try {
-      def command = "${ isWindows() ? 'cmd /c ' : '' }coffee -cpb ${ assetFile.file.canonicalPath }"
+      def command = "${ isWindows() ? 'cmd /c ' : '' }coffee -cp ${ assetFile.file.canonicalPath }"
       nodeProcess = command.execute()
       nodeProcess.waitForProcessOutput(output, err)
       if(err) {
