@@ -8,18 +8,17 @@ grails.project.dependency.resolution = {
 	repositories {
 		grailsCentral()
 		mavenCentral()
-		jcenter()
 	}
 
 	dependencies {
-		compile 'com.bertramlabs.plugins:coffee-asset-pipeline:2.0.6'
+		compile 'com.bertramlabs.plugins:coffee-asset-pipeline:2.0.7'
 	}
 	plugins {
 
-		runtime ":asset-pipeline:2.0.8"
+		runtime ":asset-pipeline:2.1.5"
 
-		build ':release:2.2.1', ':rest-client-builder:1.0.3', {
-			export = false
-		}
+		build ':release:3.0.1', ':rest-client-builder:2.0.1', {
+            export = false
+        }
 	}
 }
