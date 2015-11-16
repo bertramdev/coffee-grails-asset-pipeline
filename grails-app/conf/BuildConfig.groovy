@@ -11,11 +11,11 @@ grails.project.dependency.resolution = {
 	}
 
 	dependencies {
-		compile 'com.bertramlabs.plugins:coffee-asset-pipeline:2.6.1'
+		compile 'com.bertramlabs.plugins:coffee-asset-pipeline:2.6.4'
 	}
 	plugins {
 
-		runtime ":asset-pipeline:2.6.1"
+		runtime ":asset-pipeline:2.6.4"
 
 		build ':release:3.1.1', ':rest-client-builder:2.0.1', {
             export = false
